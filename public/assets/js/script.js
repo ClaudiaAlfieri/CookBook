@@ -77,16 +77,3 @@
                 }
             });
         });
-
-        // Adicionar alguns ingredientes de exemplo ao carregar
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                // Você pode remover esta parte se não quiser ingredientes de exemplo
-                const exampleIngredients = ['tomate', 'cebola', 'alho'];
-                exampleIngredients.forEach(ingredient => {
-                    setTimeout(() => {
-                        addIngredient(ingredient);
-                    }, Math.random() * 1000);
-                });
-            }, 1500);
-        });

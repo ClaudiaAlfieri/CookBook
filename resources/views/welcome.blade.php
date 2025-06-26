@@ -2,7 +2,7 @@
 
 <body>
     <main>
-        <section class="hero" id="inicio">
+        <section class="hero mt-10" id="inicio">
             <div class="container">
                 <div class="hero-content">
                     <h1>Transforme ingredientes em receitas incríveis</h1>
