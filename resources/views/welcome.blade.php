@@ -7,7 +7,7 @@
                 <div class="hero-content">
                     <h1>Transforme ingredientes em receitas incríveis</h1>
                     <p>Descubra o que cozinhar com os ingredientes que você tem em casa. Nossa IA cria receitas
-                        personalizadas só para você!</p>
+                        personalizadas para você!</p>
                 </div>
             </div>
         </section>
@@ -61,4 +61,3 @@
     </main>
 </body>
 
-</html>
