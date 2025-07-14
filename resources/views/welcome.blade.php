@@ -60,8 +60,8 @@
         </section>
     </main>
 
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
     const ingredientInput = document.getElementById('ingredientInput');
     const ingredientTags = document.getElementById('ingredientTags');
     const generateBtn = document.getElementById('generateBtn');
@@ -113,9 +113,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Função para gerar receita
+    // Função para gerar receita - CORRIGIDA
     async function generateRecipe() {
         if (ingredients.length === 0) return;
+
+        // Verificar se o CSRF token existe
+        const csrfToken = document.querySelector('meta[name="csrf-token"]');
+        if (!csrfToken) {
+            alert('Erro: Token CSRF não encontrado. Recarregue a página.');
+            return;
+        }
 
         // Mostrar loading
         generateBtn.disabled = true;
@@ -126,24 +133,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    'X-CSRF-TOKEN': csrfToken.getAttribute('content'),
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
                     ingredients: ingredients
                 })
             });
 
+            // Verificar se a resposta é JSON válida
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Resposta do servidor não é JSON válida');
+            }
+
             const data = await response.json();
 
-            if (data.success) {
+            if (response.ok && data.success) {
                 displayRecipe(data.recipe);
             } else {
-                alert('Erro ao gerar receita: ' + data.error);
+                const errorMessage = data.error || 'Erro desconhecido ao gerar receita';
+                showError(errorMessage);
             }
 
         } catch (error) {
-            console.error('Erro:', error);
-            alert('Erro ao conectar com o servidor');
+            console.error('Erro na requisição:', error);
+
+            if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                showError('Erro de conexão. Verifique sua internet e tente novamente.');
+            } else if (error.message.includes('JSON')) {
+                showError('Erro no servidor. Tente novamente em alguns instantes.');
+            } else {
+                showError('Erro inesperado. Tente novamente.');
+            }
         } finally {
             // Restaurar botão
             generateBtn.disabled = false;
@@ -151,26 +173,104 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Função para exibir a receita
+    // Função para exibir erros
+    function showError(message) {
+        // Criar um modal de erro simples
+        const errorModal = document.createElement('div');
+        errorModal.className = 'recipe-modal';
+        errorModal.innerHTML = `
+            <div class="recipe-content">
+                <button class="close-recipe" onclick="closeError()">&times;</button>
+                <div class="recipe-text">
+                    <h3 style="color: #e74c3c;">❌ Erro</h3>
+                    <p>${message}</p>
+                    <button onclick="closeError()" style="
+                        background: #e74c3c;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin-top: 15px;
+                    ">Fechar</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(errorModal);
+
+        // Função para fechar erro
+        window.closeError = function() {
+            if (document.body.contains(errorModal)) {
+                document.body.removeChild(errorModal);
+            }
+        };
+
+        // Fechar ao clicar fora
+        errorModal.addEventListener('click', function(e) {
+            if (e.target === errorModal) {
+                closeError();
+            }
+        });
+    }
+
+    // Função para exibir a receita - MELHORADA
     function displayRecipe(recipe) {
-        // Criar modal ou seção para mostrar a receita
         const recipeModal = document.createElement('div');
         recipeModal.className = 'recipe-modal';
+
+        // Formatar o texto da receita
+        const formattedRecipe = formatRecipeText(recipe);
+
         recipeModal.innerHTML = `
             <div class="recipe-content">
                 <button class="close-recipe" onclick="closeRecipe()">&times;</button>
                 <div class="recipe-text">
-                    ${recipe.replace(/\n/g, '<br>')}
+                    ${formattedRecipe}
                 </div>
             </div>
         `;
 
         document.body.appendChild(recipeModal);
 
-        // Tornar função global
+        // Função para fechar receita
         window.closeRecipe = function() {
-            document.body.removeChild(recipeModal);
+            if (document.body.contains(recipeModal)) {
+                document.body.removeChild(recipeModal);
+            }
         };
+
+        // Fechar ao clicar fora
+        recipeModal.addEventListener('click', function(e) {
+            if (e.target === recipeModal) {
+                closeRecipe();
+            }
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeRecipe();
+            }
+        });
+    }
+
+    // Função para formatar o texto da receita
+    function formatRecipeText(text) {
+        // Substituir quebras de linha por <br>
+        let formatted = text.replace(/\n/g, '<br>');
+
+        // Destacar seções importantes (texto em maiúsculas seguido de :)
+        formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        formatted = formatted.replace(/^([A-ZÇÁÉÍÓÚÂÊÔÀÃ\s]+:)/gm, '<h3 style="color: #333; margin-top: 20px; margin-bottom: 10px;">$1</h3>');
+
+        // Destacar itens numerados
+        formatted = formatted.replace(/^(\d+\.\s)/gm, '<strong>$1</strong>');
+
+        // Destacar itens com hífen
+        formatted = formatted.replace(/^(-\s)/gm, '<strong>$1</strong>');
+
+        return formatted;
     }
 
     // Event listener para o botão de gerar
@@ -184,21 +284,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Event listener para o botão de gerar
-    generateBtn.addEventListener('click', function() {
-        if (ingredients.length > 0) {
-            console.log('Ingredientes selecionados:', ingredients);
-            // Aqui você pode adicionar a lógica para gerar receitas
-            alert('Ingredientes: ' + ingredients.join(', '));
-        }
-    });
-
-    // Tornar a função removeIngredient global para o onclick
+    // Tornar a função removeIngredient global
     window.removeIngredient = removeIngredient;
 
     // Inicializar o botão
     updateGenerateButton();
+
 });
-</script>
+    </script>
 </body>
 
