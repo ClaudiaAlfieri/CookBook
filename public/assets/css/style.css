@@ -383,3 +383,55 @@
          gap: 2rem;
      }
  }
+
+
+ /* Modal receita */
+
+.recipe-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.recipe-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    margin: 20px;
+}
+
+.close-recipe {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-recipe:hover {
+    color: #000;
+}
+
+.recipe-text {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.recipe-text h1, .recipe-text h2, .recipe-text h3 {
+    color: #4CAF50;
+    margin-top: 20px;
+}
