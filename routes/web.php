@@ -11,4 +11,8 @@ Route::get('/comoFunciona', function () {
 Route::get('/minhasReceitas', function () {
     return view('MinhasReceitas');
 });
+Route::get('/contato', function () {
+    return view('Contato');
+});
+
 
