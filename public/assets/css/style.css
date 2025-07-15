@@ -22,7 +22,7 @@
  header {
      background: rgba(255, 255, 255, 0.95);
      backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(135, 169, 107, 0.2);
+     border-bottom: 1px solid rgba(135, 169, 107, 0.2);
      position: sticky;
      top: 0;
      z-index: 100;
@@ -36,28 +36,28 @@
      padding: 1rem 0;
  }
 
-.cta-nav-btn {
-    background: linear-gradient(135deg, #D2691E, #FF8C42);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 140px;
-}
+ .cta-nav-btn {
+     background: linear-gradient(135deg, #D2691E, #FF8C42);
+     color: white;
+     border: none;
+     padding: 12px 24px;
+     font-size: 14px;
+     font-weight: 600;
+     border-radius: 12px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
+     text-decoration: none;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     min-width: 140px;
+ }
 
-.cta-nav-btn:hover {
-    background: linear-gradient(135deg, #B8571A, #E6762F);
-}
+ .cta-nav-btn:hover {
+     background: linear-gradient(135deg, #B8571A, #E6762F);
+ }
 
  /* Hero Section */
  .hero {
@@ -95,7 +95,7 @@
 
  .hero p {
      font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+     color: rgba(255, 255, 255, 0.9);
      margin-bottom: 3rem;
      max-width: 600px;
      margin-left: auto;
@@ -111,7 +111,7 @@
      padding: 3rem;
      margin: 8rem auto;
      max-width: 800px;
-     box-shadow:0 20px 60px rgba(135, 169, 107, 0.2);
+     box-shadow: 0 20px 60px rgba(135, 169, 107, 0.2);
      border: 1px solid rgba(135, 169, 107, 0.3);
      animation: fadeInUp 0.8s ease-out 0.4s both;
      transform: translateY(0);
@@ -154,13 +154,13 @@
  }
 
  .ingredient-input:focus {
-     border-color:#D2691E;
+     border-color: #D2691E;
      box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.2);
      transform: translateY(-2px);
  }
 
  .ingredient-input::placeholder {
-    color: #A0A0A0;
+     color: #A0A0A0;
  }
 
  .input-icon {
@@ -181,7 +181,7 @@
  }
 
  .ingredient-tag {
-    background: linear-gradient(135deg, #87A96B, #A8C088);
+     background: linear-gradient(135deg, #87A96B, #A8C088);
      color: white;
      padding: 0.5rem 1rem;
      border-radius: 25px;
@@ -196,13 +196,13 @@
  }
 
  .ingredient-tag:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(135, 169, 107, 0.4);
-    background: linear-gradient(135deg, #A8C088, #87A96B);
+     transform: translateY(-2px);
+     box-shadow: 0 6px 20px rgba(135, 169, 107, 0.4);
+     background: linear-gradient(135deg, #A8C088, #87A96B);
  }
 
  .tag-remove {
-     background:  rgba(255, 255, 255, 0.2);
+     background: rgba(255, 255, 255, 0.2);
      border: none;
      color: white;
      border-radius: 50%;
@@ -222,7 +222,7 @@
 
  .generate-btn {
      width: 100%;
-    background: linear-gradient(135deg, #D2691E, #FF8C42);
+     background: linear-gradient(135deg, #D2691E, #FF8C42);
      color: white;
      border: none;
      padding: 1.5rem 2rem;
@@ -237,7 +237,7 @@
  }
 
  .generate-btn:hover {
-    background: linear-gradient(135deg, #B8571A, #E6762F);
+     background: linear-gradient(135deg, #B8571A, #E6762F);
  }
 
  /* Features Section */
@@ -261,7 +261,7 @@
      border-radius: 20px;
      text-align: center;
      box-shadow: 0 10px 40px rgba(135, 169, 107, 0.15);
-    border: 1px solid rgba(135, 169, 107, 0.2);
+     border: 1px solid rgba(135, 169, 107, 0.2);
      transition: all 0.3s ease;
      animation: fadeInUp 0.6s ease-out;
  }
@@ -269,7 +269,7 @@
  .feature-card:hover {
      transform: translateY(-10px);
      box-shadow: 0 20px 60px rgba(135, 169, 107, 0.25);
-    border-color: rgba(210, 105, 30, 0.3);
+     border-color: rgba(210, 105, 30, 0.3);
  }
 
  .feature-icon {
@@ -282,7 +282,7 @@
  .feature-card h3 {
      font-size: 1.5rem;
      font-weight: 700;
-      color: #87A96B;
+     color: #87A96B;
      margin-bottom: 1rem;
  }
 
@@ -393,7 +393,7 @@
  }
 
 
- /* Modal receita */
+/* Modal receita */
 
 .recipe-modal {
     position: fixed;
@@ -402,45 +402,190 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 .recipe-content {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
+    background: linear-gradient(135deg, #F5F5DC 0%, #FAF0E6 100%);
+    backdrop-filter: blur(20px);
+    padding: 60px;
+    border-radius: 25px;
+    width: 100%;
     max-width: 800px;
-    max-height: 80vh;
-    overflow-y: auto;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
     position: relative;
-    margin: 20px;
+    box-shadow: 0 25px 60px rgba(135, 169, 107, 0.3);
+    border: 2px solid rgba(135, 169, 107, 0.2);
+    animation: slideUp 0.4s ease-out;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-text {
+    line-height: 1.8;
+    font-size: 16px;
+    color: #6B8E23;
+    font-family: 'Inter', sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 0;
+    margin-right: -20px;
 }
 
 .close-recipe {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
+    top: 30px;
+    right: 40px;
+    background: linear-gradient(135deg, #D2691E, #FF8C42);
     border: none;
-    font-size: 30px;
+    font-size: 18px;
     cursor: pointer;
-    color: #666;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+    z-index: 1001;
 }
 
 .close-recipe:hover {
-    color: #000;
+    background: linear-gradient(135deg, #B8571A, #E6762F);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(210, 105, 30, 0.4);
 }
 
-.recipe-text {
-    line-height: 1.6;
-    font-size: 16px;
+.close-recipe:active {
+    transform: scale(0.95);
 }
 
-.recipe-text h1, .recipe-text h2, .recipe-text h3 {
-    color: #4CAF50;
-    margin-top: 20px;
+.recipe-text h1 {
+    color: #87A96B;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    margin-top: 0;
+    text-align: center;
+    border-bottom: 3px solid #D2691E;
+    padding-bottom: 15px;
 }
 
+.recipe-text h2::before {
+    content: "🍳";
+    font-size: 1.4rem;
+}
+
+.recipe-text h3 {
+    color: #D2691E;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.recipe-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.recipe-text ul, .recipe-text ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.recipe-text li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+.recipe-text strong {
+    color: #87A96B;
+    font-weight: 700;
+}
+
+/* Customização da scrollbar */
+.recipe-text::-webkit-scrollbar {
+    width: 12px;
+}
+
+.recipe-text::-webkit-scrollbar-track {
+    background: rgba(135, 169, 107, 0.1);
+    border-radius: 10px;
+    margin-right: -10px;
+}
+
+.recipe-text::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #87A96B);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.recipe-text::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #6B8E23);
+    background-clip: content-box;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .recipe-modal {
+        padding: 10px;
+    }
+
+    .recipe-content {
+        padding: 40px 30px;
+        border-radius: 20px;
+    }
+
+    .recipe-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .recipe-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .close-recipe {
+        top: 25px;
+        right: 25px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
