@@ -12,28 +12,7 @@
             </div>
         </section>
 
-        <section class="container">
-            <div class="ingredient-section">
-                <h2>Quais ingredientes você tem?</h2>
-                <p>Digite os ingredientes disponíveis e deixe nossa IA sugerir receitas deliciosas</p>
-
-                <div class="ingredient-input-container">
-                    {{-- <span class="input-icon">🥕</span> --}}
-                    <input type="text" class="ingredient-input"
-                        placeholder="Digite um ingrediente e pressione Enter..." id="ingredientInput">
-                </div>
-
-                <div class="ingredient-tags" id="ingredientTags">
-                    <!-- Tags de ingredientes serão adicionadas aqui -->
-                </div>
-
-                <button class="generate-btn" id="generateBtn">
-                    🤖 Gerar Receitas com IA
-                </button>
-            </div>
-        </section>
-
-        <section class="features" id="como-funciona">
+         <section class="features" id="como-funciona">
             <div class="container">
                 <h2 class="section-title">Como Funciona</h2>
                 <div class="features-grid">
@@ -58,6 +37,29 @@
                 </div>
             </div>
         </section>
+
+        <section class="container">
+            <div class="ingredient-section">
+                <h2>Quais ingredientes você tem?</h2>
+                <p>Digite os ingredientes disponíveis e deixe nossa IA sugerir receitas deliciosas</p>
+
+                <div class="ingredient-input-container">
+                    {{-- <span class="input-icon">🥕</span> --}}
+                    <input type="text" class="ingredient-input"
+                        placeholder="Digite um ingrediente e pressione Enter..." id="ingredientInput">
+                </div>
+
+                <div class="ingredient-tags" id="ingredientTags">
+                    <!-- Tags de ingredientes serão adicionadas aqui -->
+                </div>
+
+                <button class="generate-btn" id="generateBtn">
+                    🤖 Gerar Receitas com IA
+                </button>
+            </div>
+        </section>
+
+
     </main>
 
    <script>

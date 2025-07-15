@@ -17,9 +17,5 @@ Route::get('/contato', function () {
     return view('Contato');
 });
 
-
 // Rota para gerar receita
 Route::post('/generate-recipe', [RecipeController::class, 'generateRecipe']);
-
-// Rota para testar a API (opcional)
-Route::get('/test-gemini', [RecipeController::class, 'test']);
