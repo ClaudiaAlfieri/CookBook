@@ -27,6 +27,10 @@
     <!-- CSS Custom -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
 
+    <!-- JS Custom -->
+    <script src="{{ asset('assets/js/script.js') }}"></script>
+
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
@@ -72,9 +76,9 @@
                 </ul>
                 <div class="ml-10">
                     <a href="#receita">
-                    <button type="button" class="cta-nav-btn">
-                        Vamos a isso!
-                    </button>
+                        <button type="button" class="cta-nav-btn">
+                            Vamos a isso!
+                        </button>
                     </a>
                 </div>
             </div>
