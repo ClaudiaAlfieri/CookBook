@@ -19,7 +19,7 @@
                     <div class="feature-card">
                         <span class="feature-icon">📝</span>
                         <h3>Liste seus ingredientes</h3>
-                        <p>Digite todos os ingredientes que você tem disponível em casa, desde temperos até proteínas e
+                        <p>Digite os ingredientes que você tem disponível em casa, desde temperos até proteínas e
                             vegetais.</p>
                     </div>
                     <div class="feature-card">
