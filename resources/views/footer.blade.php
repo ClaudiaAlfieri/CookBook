@@ -18,10 +18,13 @@
         <div class="footer-section">
             <h3>Contato</h3>
             <p>📧 cookbook@cookbook.com</p>
-
             <div class="social-links">
-                <a href="#" title="Facebook">📘</a>
-                <a href="#" title="Instagram">📷</a>
+                <a href="https://facebook.com/seuperfil" title="Facebook">
+                    <img src="img/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://instagram.com/seuperfil" title="Instagram">
+                    <img src="img/instagram.png" alt="Instagram">
+                </a>
             </div>
         </div>
     </div>
