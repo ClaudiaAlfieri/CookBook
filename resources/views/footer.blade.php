@@ -9,8 +9,8 @@
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#como-funciona">Como Funciona</a></li>
-                <li><a href="#receita">Vamos a isso</a></li>
                 <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#receita">Vamos a isso!</a></li>
 
             </ul>
         </div>
