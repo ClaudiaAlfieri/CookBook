@@ -38,7 +38,7 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" id="receita">
             <div class="ingredient-section">
                 <h2>Quais ingredientes você tem?</h2>
                 <p>Digite os ingredientes disponíveis e deixe nossa IA sugerir receitas deliciosas</p>
@@ -60,6 +60,8 @@
 
 
     </main>
+
+    @extends('footer')
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

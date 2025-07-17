@@ -7,14 +7,9 @@ use App\Http\Controllers\TestGeminiController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/comoFunciona', function () {
-    return view('ComoFunciona');
-});
-Route::get('/minhasReceitas', function () {
-    return view('MinhasReceitas');
-});
-Route::get('/contato', function () {
-    return view('Contato');
+
+Route::get('/sobre', function () {
+    return view('about');
 });
 
 // Rota para gerar receita
