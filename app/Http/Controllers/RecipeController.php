@@ -36,7 +36,7 @@ class RecipeController extends Controller
             ], 400);
         }
 
-        // Criar prompt melhorado
+        // Criar prompt
         $prompt = $this->createPrompt($ingredients);
 
         try {
