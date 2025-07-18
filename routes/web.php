@@ -8,5 +8,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Rota para gerar receita
+// Rota para gerar receita:
 Route::post('/generate-recipe', [RecipeController::class, 'generateRecipe']);
