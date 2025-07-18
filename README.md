@@ -7,11 +7,11 @@ A website built with **Laravel** that transforms simple ingredients you already 
 
 ## 🔥 Features
 
-✅ User-friendly interface for adding ingredients
-✅ AI integration to generate creative and detailed recipes
-✅ Smart limit to avoid overloading the AI (maximum 15 ingredients)
-✅ Returns recipe name, ingredient list, preparation steps, and tips
-✅ Lightweight, responsive, and clean interface
+-✅ User-friendly interface for adding ingredients
+-✅ AI integration to generate creative and detailed recipes
+-✅ Smart limit to avoid overloading the AI (maximum 15 ingredients)
+-✅ Returns recipe name, ingredient list, preparation steps, and tips
+-✅ Lightweight, responsive, and clean interface
 
 
 ## 🛠️ Technologies
