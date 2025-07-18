@@ -1,10 +1,9 @@
----
+
 
 # 🧑‍🍳 AI Cookbook — Laravel + Gemini API
 
 A web application built with **Laravel** that transforms simple ingredients you already have at home into complete, creative, and detailed recipes. Through integration with the **Gemini 1.5 Flash API** (Google AI), the system generates custom recipes so you can cook without waste and without leaving your house.
 
----
 
 ## 🔥 Features
 
@@ -14,7 +13,6 @@ A web application built with **Laravel** that transforms simple ingredients you 
 ✅ Returns recipe name, ingredient list, preparation steps, and tips
 ✅ Lightweight, responsive, and clean interface
 
----
 
 ## 🛠️ Technologies
 
@@ -24,8 +22,6 @@ A web application built with **Laravel** that transforms simple ingredients you 
 * **Google Gemini 1.5 Flash API**
 * **Vite** for frontend build
 * **Axios / Fetch** for asynchronous requests
-
----
 
 ## ⚙️ Local Installation
 
@@ -54,10 +50,8 @@ php artisan serve
 
 Add your API key to the `.env` file:
 
-```
 GEMINI_API_KEY=your-gemini-api-key-here
 ```
----
 
 ## 🚀 How It Works
 
@@ -82,7 +76,6 @@ Create a delicious recipe...
 
 ### 4️⃣ The AI returns a structured text, which is displayed to the user.
 
----
 
 ## 🖥️ Example Endpoint
 
@@ -117,18 +110,12 @@ This project was created to bring technology and creativity together in the kitc
 * Favorite recipes
 * Weekly recipe suggestions
 * Integration with grocery APIs for shopping lists
-* 
----
-
+  
 ## 👨‍💻 Author
 
 This project was developed by Claudia Alfieri for educational purposes.
 
----
 
 ## 📝 Contribution 🤝
 
 Contributions are welcome through pull requests.
-
----
-
