@@ -2,123 +2,133 @@
 
 # 🧑‍🍳 AI Cookbook — Laravel + Gemini API
 
-Aplicação web desenvolvida em **Laravel** que transforma ingredientes simples que você tem em casa em receitas completas, criativas e detalhadas. Através da integração com a API **Gemini 1.5 Flash** (Google AI), o sistema gera receitas sob medida para você cozinhar sem desperdício e sem precisar sair de casa.
+A web application built with **Laravel** that transforms simple ingredients you already have at home into complete, creative, and detailed recipes. Through integration with the **Gemini 1.5 Flash API** (Google AI), the system generates custom recipes so you can cook without waste and without leaving your house.
 
 ---
 
-## 🔥 Funcionalidades
+## 🔥 Features
 
-✅ Cadastro de ingredientes via interface amigável
-✅ Integração com IA para geração de receitas criativas e detalhadas
-✅ Limite inteligente para não sobrecarregar a IA (máximo 15 ingredientes)
-✅ Retorno com nome da receita, lista de ingredientes, modo de preparo e dicas
-✅ Interface leve, responsiva e clara
+✅ User-friendly interface for adding ingredients
+✅ AI integration to generate creative and detailed recipes
+✅ Smart limit to avoid overloading the AI (maximum 15 ingredients)
+✅ Returns recipe name, ingredient list, preparation steps, and tips
+✅ Lightweight, responsive, and clean interface
 
 ---
 
-## 🛠️ Tecnologias
+## 🛠️ Technologies
 
 * **Laravel 11+**
 * **PHP 8.2+**
 * **Blade / Tailwind CSS**
 * **Google Gemini 1.5 Flash API**
-* **Vite** para build frontend
-* **Axios / Fetch** para requisições assíncronas
+* **Vite** for frontend build
+* **Axios / Fetch** for asynchronous requests
 
 ---
 
-## ⚙️ Instalação Local
+## ⚙️ Local Installation
 
 ```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+# Clone the repository
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
 
-# Instale as dependências
+# Install dependencies
 composer install
 npm install && npm run build
 
-# Configure o ambiente
+# Set up environment variables
 cp .env.example .env
 php artisan key:generate
 
-# Configure seu banco de dados no .env
+# Configure your database in .env
 php artisan migrate
 
-# Rode o servidor local
+# Start the local server
 php artisan serve
 ```
-
 ---
 
-## 🔑 Configuração da API Gemini
+## 🔑 Gemini API Configuration
 
-Adicione sua chave no arquivo `.env`:
+Add your API key to the `.env` file:
 
 ```
 GEMINI_API_KEY=your-gemini-api-key-here
 ```
-
 ---
 
-## 🚀 Como Funciona
+## 🚀 How It Works
 
-### 1️⃣ O Usuário adiciona ingredientes disponíveis
+### 1️⃣ The user adds available ingredients
 
-### 2️⃣ A IA recebe um **prompt estruturado** solicitando:
+### 2️⃣ The AI receives a **structured prompt** requesting:
 
-* Nome criativo para a receita
-* Lista de ingredientes com quantidades
-* Tempo de preparo e rendimento
-* Passo a passo numerado
-* Dicas finais
+* A creative name for the recipe
+* A list of ingredients with quantities
+* Preparation time and yield
+* Step-by-step instructions
+* Final tips
 
-### 3️⃣ O backend chama a API Gemini com esse prompt:
+### 3️⃣ The backend calls the Gemini API with this prompt:
 
 ```php
-return "Você é um chef experiente. Com base nestes ingredientes: {$ingredientsList}
+return "You are an experienced chef. Based on these ingredients: {$ingredientsList}
 
-Crie uma receita deliciosa...
+Create a delicious recipe...
 ";
 ```
 
-### 4️⃣ A IA retorna um texto estruturado, exibido para o usuário.
+### 4️⃣ The AI returns a structured text, which is displayed to the user.
 
 ---
 
-## 🖥️ Exemplo de Endpoint
+## 🖥️ Example Endpoint
 
-| Método | Rota             | Ação                    |
-| ------ | ---------------- | ----------------------- |
-| POST   | /generate-recipe | Gera uma receita com IA |
+| Method | Route            | Action                 |
+| ------ | ---------------- | ---------------------- |
+| POST   | /generate-recipe | Generate recipe via AI |
 
-Payload esperado:
+Expected payload:
 
 ```json
 {
-    "ingredients": ["arroz", "frango", "tomate"]
+    "ingredients": ["rice", "chicken", "tomato"]
 }
 ```
 
-Resposta:
+Response:
 
 ```json
 {
     "success": true,
-    "recipe": "NOME DA RECEITA: ...",
+    "recipe": "RECIPE NAME: ...",
     "ingredients_used": [...]
 }
 ```
+---
+
+## 🙋 About the Project
+
+This project was created to bring technology and creativity together in the kitchen. It has the potential to evolve with features such as:
+
+* User registration
+* Favorite recipes
+* Weekly recipe suggestions
+* Integration with grocery APIs for shopping lists
+* 
+---
+
+## 👨‍💻 Author
+
+This project was developed by Claudia Alfieri for educational purposes.
 
 ---
 
-## 🙋 Sobre o Projeto
+## 📝 Contribution 🤝
 
-Este projeto foi criado com o propósito de unir tecnologia e criatividade na cozinha. Ele tem potencial para evoluir para funcionalidades como:
-
-* Cadastro de usuários
-* Favoritar receitas
-* Sugestões semanais automáticas
-* Integração com APIs de mercado para compras
+Contributions are welcome through pull requests.
 
 ---
+
