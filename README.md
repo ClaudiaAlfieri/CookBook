@@ -1,61 +1,121 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+# 🧑‍🍳 Cookbook — Laravel + Gemini API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A website built with **Laravel** that transforms simple ingredients you already have at home into complete, creative, and detailed recipes. Through integration with the **Gemini API** (Google AI), the system generates custom recipes so you can cook with what you already have on hand.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🔥 Features
 
-## Learning Laravel
+✅ User-friendly interface for adding ingredients  
+✅ AI integration to generate creative and detailed recipes  
+✅ Smart limit to avoid overloading the AI (maximum 15 ingredients)  
+✅ Returns recipe name, ingredient list, preparation steps, and tips  
+✅ Lightweight, responsive, and clean interface  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🛠️ Technologies
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* **Laravel 11+**
+* **PHP 8.2+**
+* **Blade / Tailwind CSS**
+* **Google Gemini API**
+* **Vite** for frontend build
+* **Axios / Fetch** for asynchronous requests
 
-## Laravel Sponsors
+## ⚙️ Local Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
 
-### Premium Partners
+# Install dependencies
+composer install
+npm install && npm run build
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# Set up environment variables
+cp .env.example .env
+php artisan key:generate
 
-## Contributing
+# Configure your database in .env
+php artisan migrate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Start the local server
+php artisan serve
+```
+---
 
-## Code of Conduct
+## 🔑 Gemini API Configuration
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Add your API key to the `.env` file:
 
-## Security Vulnerabilities
+GEMINI_API_KEY=your-gemini-api-key-here
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🚀 How It Works
 
-## License
+### 1️⃣ The user adds available ingredients
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 2️⃣ The AI receives a **structured prompt** requesting:
+
+* A creative name for the recipe
+* A list of ingredients with quantities
+* Preparation time and yield
+* Step-by-step instructions
+* Final tips
+
+### 3️⃣ The backend calls the Gemini API with this prompt:
+
+```php
+return "You are an experienced chef. Based on these ingredients: {$ingredientsList}
+
+Create a delicious recipe...
+";
+```
+
+### 4️⃣ The AI returns a structured text, which is displayed to the user.
+
+
+## 🖥️ Example Endpoint
+
+| Method | Route            | Action                 |
+| ------ | ---------------- | ---------------------- |
+| POST   | /generate-recipe | Generate recipe via AI |
+
+Expected payload:
+
+```json
+{
+    "ingredients": ["rice", "chicken", "tomato"]
+}
+```
+
+Response:
+
+```json
+{
+    "success": true,
+    "recipe": "RECIPE NAME: ...",
+    "ingredients_used": [...]
+}
+```
+---
+
+## 🙋 About the Project
+
+This project was created to bring technology and creativity together in the kitchen. It has the potential to evolve with features such as:
+
+* User registration
+* Favorite recipes
+* Weekly recipe suggestions
+* Integration with grocery APIs for shopping lists
+  
+## 👨‍💻 Author
+
+This project was developed by Claudia Alfieri for educational purposes.
+
+
+## 📝 Contribution 🤝
+
+Contributions are welcome through pull requests.
