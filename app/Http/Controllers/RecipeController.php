@@ -94,7 +94,8 @@ Seja criativo mas prático!";
 
     private function callGemini($prompt)
     {
-        $apiKey = env('GEMINI_API_KEY');
+       $apiKey = getenv('GEMINI_API_KEY');
+;
 
         if (!$apiKey) {
             throw new \Exception('API Key não configurada no .env');
