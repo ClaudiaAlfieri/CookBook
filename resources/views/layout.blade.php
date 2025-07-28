@@ -72,7 +72,7 @@
                     </li>
                 </ul>
 
-                <!-- Adicione a classe mobile-cta-container aqui -->
+                <!-- Cta -->
                 <div class="ml-10 md:ml-10 mobile-cta-container">
                     <a href="#receita" class="nav-link-mobile">
                         <button type="button" class="cta-nav-btn w-full md:w-auto">
